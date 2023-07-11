@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Rat
 # Create your views here.
 
@@ -19,3 +20,15 @@ def rats_detail(request, rat_id):
     return render(request, 'rats/detail.html', {
         'rat': rat
     })
+
+class RatCreate(CreateView):
+    model = Rat
+    fields = '__all__'
+
+class RatUpdate(UpdateView):
+    model = Rat
+    fields = ['breed', 'description', 'age']
+
+class RatDelete(DeleteView):
+    model = Rat
+    success_url = '/allrats'

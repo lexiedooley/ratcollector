@@ -16,10 +16,11 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Rat Collector</a></li>
+          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Rat Collector</a></li>
         </ul>
         <ul class="right">
           <li><a href="/about">About</a></li>
+          <li><a href="{% url 'rats_create' %}">Add a Rat</a></li>
           <li><a href="/allrats">All Rats</a></li>
         </ul>
       </div>
