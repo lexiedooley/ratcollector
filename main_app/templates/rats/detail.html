@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Rat List</h1>
-
-{% for rat in rats %}
-<a href="{% url 'detail' rat.id %}">
-  <div class="card">
+<h1>Rat Details</h1>
+<div class="card">
     <div class="card-content">
-      <span class="card-title">{{ rat.name }}</span>
+         <span class="card-title">{{ rat.name }}</span>
       <p>Breed: {{ rat.breed }}</p>
       <p>Description: {{ rat.description|linebreaks }}</p>
       {% if rat.age > 0 %}
@@ -16,8 +13,6 @@
         <p>Age: Baby</p>
       {% endif %}
     </div>
-  </div>
-</a> 
-{% endfor %}
+</div>
 
 {% endblock %}
